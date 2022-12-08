@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="p5.js"></script>
+    <script src="code.js"></script>
+    <title>FRACTAIS</title>
+</head>
+<body>
+    <div class="main">
+        <button class="base" id="exp" onclick="abrirExp()">Explicação</button>
+        <label>Salto de cada iteracao</label>
+        <input type="number" id="salto" placeholder="0.5" step="0.1">
+        <button onclick="definirSalto()">Definir salto</button>
+        <br> <br>
+        <label for="pontos">Numero de Vértices</label>
+        <select id="pontos">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <label for="restricao">Restringir Fractal</label>
+        <select id="restricao">
+            <option value="0">Não</option>
+            <option value="1">Sim, Restrição 1</option>
+            <option value="2">Sim, Restrição 2</option>
+            <option value="3">Sim, Restrição 3</option>
+            <option value="4">Sim, Restrição 4</option>
+        </select>
+        <br> <br>
+        <label for="definicao">Definição do Fractal</label>
+        <input type="range" id="definicao" name="definicao" min="1" max="50" step="1">
+        <button class="base iniciar" onclick="start()">Iniciar</button>
+        <label>Aperte o iniciar multiplas vezes para acelerar o processo.</label>
+        <br>
+        <button class="base reset" onclick="reset()">Resetar</button>
+    </div>
+
+    <div class="explicacao">
+        <p>Fractais</p>
+        <p>
+            Fractal é um objeto comumente encontrado na natureza, veja os exemplos abaixo. 
+        </p>
+        <img class="nat" src="imagens/nat1.jpg" alt="natureza 1">
+        <img class="nat" src="imagens/nat2.jpg" alt="natureza 2">
+        <img class="nat" src="imagens/nat3.jpg" alt="natureza 3">
+        <p>
+            Um fractal é um objeto geométrico que pode ser dividido em partes, cada uma das quais 
+            semelhante ao objeto original. Diz-se que os fractais têm infinitos detalhes, são geralmente 
+            autossimilares e de escala. Em muitos casos um fractal pode ser gerado por um padrão repetido,
+            tipicamente um processo recorrente ou iterativo. 
+            <br> Uma outra definição para fractal é a de que são objetos cuja dimensão não é um número inteiro.
+            Como por exemplo um ponto que tem dimensão 0, ou uma linha que tem dimensão 1, um quadrado de dimensão 2, etc.
+        </p>
+        <p>
+            Fractais são figuras da geometria não classica.
+            <br> A baixo temos a curva de koch.
+            Para gerarmos esta curva seguimos os seguintes passos:
+            <br> (1) Divide-se o segmento de recta em três segmentos de igual comprimento.
+            <br> (2) Desenha-se um triângulo equilátero (fazendo um ângulo de π/3 radianos (60 graus)), em que o segmento central, referido no primeiro passo, servirá de base.
+            <br> (3) Apaga-se o segmento que serviu de base ao triângulo do segundo passo.
+        </p>
+        <img src="imagens/koch_curve.gif" alt="koch_curve">
+        <p>
+            A geometria fractal é o ramo da matemática que estuda as propriedades e o comportamento dos 
+            fractais. Descreve muitas situações que não podem ser explicadas facilmente pela geometria 
+            clássica, e foram aplicadas em ciência, em tecnologia e em arte gerada por computador. 
+        </p>
+        <p>
+            Na atividade a seguir você poderá mexer nos fractais e criar varios tipos diferentes deles.
+            Para criar fractais vamos usar o jogo do caos, um algoritmo descrito inicialmente por Barnsley em 1988.
+        </p>
+        <button class="base" id="fechar" onclick="abrirAtv()">Atividade</button>
+    </div>
+</body>
+<footer>
+    <p>Feito por Felipe Wieler</p>
+</footer>
+</html>
